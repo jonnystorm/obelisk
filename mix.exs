@@ -2,16 +2,17 @@ defmodule Obelisk.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :obelisk,
-     version: "0.10.0",
-     elixir: "~> 1.0",
-     package: package,
-     docs: [readme: true, main: "README.md"],
-     description: """
-      obelisk is a static site generator for Elixir. It is inspired by jekyll,
-      with the goal of being fast and simple to use and extend.
-     """,
-     deps: deps]
+    [ app: :obelisk,
+      version: "0.10.0",
+      elixir: "~> 1.0",
+      package: package(),
+      docs: [readme: true, main: "README.md"],
+      description: """
+       obelisk is a static site generator for Elixir. It is inspired by jekyll,
+       with the goal of being fast and simple to use and extend.
+      """,
+      deps: deps()
+    ]
   end
 
   def application do
@@ -32,8 +33,7 @@ defmodule Obelisk.Mixfile do
   end
 
   defp package do
-    %{
-      licenses: ["MIT"],
+    %{licenses: ["MIT"],
       contributors: ["Benny Hallett"],
       links: %{ "Github" => "https://github.com/bennyhallett/obelisk"}
     }
